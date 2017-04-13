@@ -14,7 +14,8 @@ export class ModalSlideIn extends PageTransition {
     const wrapper = new Animation(this.plt, ele.querySelector('.modal-wrapper'));
 
     wrapper.beforeStyles({ 'opacity': 1 });
-    wrapper.fromTo('translateY', '100%', '0%');
+    // wrapper.fromTo('translateY', '100%', '0%');
+    wrapper.fromTo('height', 0, '100%');
 
     backdrop.fromTo('opacity', 0.01, 0.4);
 
@@ -39,7 +40,8 @@ export class ModalSlideOut extends PageTransition {
 
     // height of the screen - top of the container tells us how much to scoot it down
     // so it's off-screen
-    wrapper.fromTo('translateY', '0px', `${this.plt.height() - wrapperEleRect.top}px`);
+    // wrapper.fromTo('translateY', '0px', `${this.plt.height() - wrapperEleRect.top}px`);
+    wrapper.fromTo('height', '100%', 0);
     backdrop.fromTo('opacity', 0.4, 0.0);
 
     this
